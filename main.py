@@ -10,11 +10,11 @@ from kivy.uix.button import Button
 
 
 class WidgetsExample(GridLayout):
-    mytext = StringProperty('Hello!!!')
+    count = StringProperty('1')
 
     def on_button_click(self):
         print('Button pressed.!!')
-        self.mytext = "fix your damn mind.."
+        self.count = str(int(self.count) + 1)
 
 
 class StackLayoutExample(StackLayout):

@@ -147,5 +147,13 @@ class CanvasExample5(Widget):
         self.ball.pos = (x + self.mov_x, y + self.mov_y)
 
 
+class CanvasExample6(Widget):
+    pass
+
+
+class CanvasExample7(BoxLayout):
+    pass
+
+
 if __name__ == '__main__':
     TheLabApp().run()

@@ -20,6 +20,13 @@ WidgetsExample:
         size_hint: None, 1
         width: '100dp'
         on_active: root.on_switch_active(self)
+    Slider:
+        min: 0
+        max: 100
+        value: root.slider_value_txt
+        on_value: root.on_slider_value(self)
+    Label:
+        text: root.slider_value_txt
 
 <PageLayoutExample@PageLayout>:
     MainWidget:

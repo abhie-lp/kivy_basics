@@ -36,7 +36,7 @@ class WidgetsExample(GridLayout):
 
     def on_slider_value(self, slider_widget: Slider):
         print("Slider", slider_widget.value)
-        self.slider_value_txt = str(int(slider_widget.value))
+        # self.slider_value_txt = str(int(slider_widget.value))
 
 
 class StackLayoutExample(StackLayout):

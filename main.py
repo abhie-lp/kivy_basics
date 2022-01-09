@@ -103,7 +103,17 @@ class CanvasExample4(Widget):
             Line(circle=(200, 400, 80), width=2)
             Color(1, 0, 0)
             Line(rectangle=(300, 170, 300, 150))
-            Rectangle(pos=(300, 10), size=(300, 150))
+            self.rect = Rectangle(pos=(300, 10), size=(300, 150))
+
+    def on_button_a_click(self):
+        print("Button A")
+        x, y = self.rect.pos
+        w, _ = self.rect.size
+        inc = dp(10)
+        diff = self.width - (x + w)
+        if diff < inc:
+            inc = diff
+        self.rect.pos = (x + inc, y)
 
 
 if __name__ == '__main__':

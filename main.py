@@ -80,5 +80,13 @@ class TheLabApp(App):
     pass
 
 
+class CanvasExample1(Widget):
+    pass
+
+
+class CanvasExample2(Widget):
+    pass
+
+
 if __name__ == '__main__':
     TheLabApp().run()

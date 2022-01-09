@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.graphics import Line, Color, Rectangle
 from kivy.metrics import dp
 from kivy.properties import StringProperty, BooleanProperty
 from kivy.uix.slider import Slider
@@ -11,6 +12,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.button import Button
 from kivy.uix.togglebutton import ToggleButton
+from kivy.graphics import Line
 
 
 class WidgetsExample(GridLayout):
@@ -90,6 +92,18 @@ class CanvasExample2(Widget):
 
 class CanvasExample3(Widget):
     pass
+
+
+class CanvasExample4(Widget):
+    def __init__(self, **kwargs):
+        super(CanvasExample4, self).__init__(**kwargs)
+        with self.canvas:
+            Line(points=(100, 100, 400, 500), width=2)
+            Color(0, 1, 0)
+            Line(circle=(200, 400, 80), width=2)
+            Color(1, 0, 0)
+            Line(rectangle=(300, 170, 300, 150))
+            Rectangle(pos=(300, 10), size=(300, 150))
 
 
 if __name__ == '__main__':

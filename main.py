@@ -1,5 +1,6 @@
 from kivy.app import App
-from kivy.graphics import Line, Color, Rectangle
+from kivy.clock import Clock
+from kivy.graphics import Line, Color, Rectangle, Ellipse
 from kivy.metrics import dp
 from kivy.properties import StringProperty, BooleanProperty
 from kivy.uix.slider import Slider
@@ -114,6 +115,36 @@ class CanvasExample4(Widget):
         if diff < inc:
             inc = diff
         self.rect.pos = (x + inc, y)
+
+
+class CanvasExample5(Widget):
+    def __init__(self, **kwargs):
+        super(CanvasExample5, self).__init__(**kwargs)
+        self.ball_size = dp(50)
+        self.mov_x, self.mov_y = dp(3), dp(3)
+        with self.canvas:
+            self.ball = Ellipse(pos=self.center,
+                                size=(self.ball_size, self.ball_size))
+        Clock.schedule_interval(self.update, 1/24)
+
+    def on_size(self, *args):
+        print("on size:", self.width, self.height)
+        self.ball.pos = (self.center_x - self.ball_size / 2,
+                         self.center_y - self.ball_size / 2)
+
+    def update(self, dt):
+        print("update")
+        x, y = self.ball.pos
+        if x + self.ball_size > self.width:
+            self.mov_x *= -1
+        elif x < 0:
+            self.mov_x *= -1
+
+        if y + self.ball_size > self.height:
+            self.mov_y *= -1
+        elif y < 0:
+            self.mov_y *= -1
+        self.ball.pos = (x + self.mov_x, y + self.mov_y)
 
 
 if __name__ == '__main__':

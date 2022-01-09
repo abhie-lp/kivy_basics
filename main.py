@@ -1,6 +1,6 @@
 from kivy.app import App
 from kivy.metrics import dp
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty, BooleanProperty
 from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.anchorlayout import AnchorLayout
@@ -12,7 +12,7 @@ from kivy.uix.togglebutton import ToggleButton
 
 class WidgetsExample(GridLayout):
     count = StringProperty('1')
-    start_counter = False
+    start_counter = BooleanProperty(False)
 
     def on_button_click(self):
         print('Button pressed.!!')

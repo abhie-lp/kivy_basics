@@ -8,8 +8,9 @@ WidgetsExample:
         size_hint: None, 1
         width: '100dp'
     Button:
-        text: 'Counter'
+        text: 'COUNTER'
         on_press: root.on_button_click()
+        disabled: not root.start_counter
     Label:
         text: root.count
         font_name: 'fonts/Lcd.ttf'

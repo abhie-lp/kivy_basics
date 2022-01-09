@@ -36,6 +36,14 @@ WidgetsExample:
         ProgressBar:
             max: 100
             value: int(my_slider.value)
+    TextInput:
+        id: my_textinput
+        size_hint: None, 1
+        width: '100dp'
+        multiline: False
+        on_text_validate: root.on_textinput_validate(self)
+    Label:
+        text: 'Label: ' + root.textinput_txt
 
 <PageLayoutExample@PageLayout>:
     MainWidget:

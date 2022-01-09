@@ -1,40 +1,9 @@
-StackLayoutExample:
+ScrollViewLayoutExample:
 
-<StackLayoutExample>:
-    orientation: 'rl-tb'
-    Button:
-        text: 'Stack 1'
-        size_hint: .2, .2
-    Button:
-        text: 'Stack 2'
-        size_hint: .2, .2
-    Button:
-        text: 'Stack 3'
-        size_hint: .2, .2
-    Button:
-        text: 'Stack 4'
-        size_hint: .2, .2
-    Button:
-        text: 'Stack 5'
-        size_hint: .2, .2
-    Button:
-        text: 'Stack 6'
-        size_hint: .2, .2
-    Button:
-        text: 'Stack 7'
-        size_hint: .2, .2
-    Button:
-        text: 'Stack 8'
-        size_hint: .2, .2
-    Button:
-        text: 'Stack 9'
-        size_hint: .2, .2
-    Button:
-        text: 'Stack 10'
-        size_hint: .2, .2
-    Button:
-        text: 'Stack 11'
-        size_hint: .2, .2
+<ScrollViewLayoutExample@ScrollView>
+    StackLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height
 
 <GridLayoutExample>:
     rows: 3

@@ -11,14 +11,17 @@ from kivy.uix.button import Button
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):
         super(StackLayoutExample, self).__init__(**kwargs)
-        for i in range(10):
-            self.add_widget(Button(text=f'Button {i}', size_hint=(.2, .2)))
-        size_constant = dp(100)
-        for i in range(10, 20):
-            size = size_constant + i * 2
+        size = dp(120)
+        for i in range(200):
             self.add_widget(Button(
-                text=f'BUTTON {i}', size_hint=(None, None), size=(size, size)
+                text=f'Button {i}', size_hint=(None, None),
+                size=(size, size)
             ))
+        # for i in range(10, 20):
+        #     size = size_constant + i * 2
+        #     self.add_widget(Button(
+        #         text=f'BUTTON {i}', size_hint=(None, None), size=(size, size)
+        #     ))
 
 
 class GridLayoutExample(GridLayout):

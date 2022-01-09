@@ -1,6 +1,7 @@
 from kivy.app import App
 from kivy.metrics import dp
 from kivy.properties import StringProperty, BooleanProperty
+from kivy.uix.switch import Switch
 from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.anchorlayout import AnchorLayout
@@ -27,6 +28,9 @@ class WidgetsExample(GridLayout):
         else:
             toggle_button.text = 'ON'
             self.start_counter = True
+
+    def on_switch_active(self, switch_button: Switch):
+        print("Switch clicked", switch_button.active)
 
 
 class StackLayoutExample(StackLayout):

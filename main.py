@@ -7,14 +7,26 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.button import Button
+from kivy.uix.togglebutton import ToggleButton
 
 
 class WidgetsExample(GridLayout):
     count = StringProperty('1')
+    start_counter = False
 
     def on_button_click(self):
         print('Button pressed.!!')
-        self.count = str(int(self.count) + 1)
+        if self.start_counter:
+            self.count = str(int(self.count) + 1)
+
+    def on_toggle_button_state(self, toggle_button: ToggleButton):
+        print("Toggle clicked", toggle_button.state)
+        if toggle_button.state == 'normal':
+            toggle_button.text = 'OFF'
+            self.start_counter = False
+        else:
+            toggle_button.text = 'ON'
+            self.start_counter = True
 
 
 class StackLayoutExample(StackLayout):
